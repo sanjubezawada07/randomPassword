@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script>
+            function generate(){
+            const a="abcdefghijklmnopqrstuvwxyz";
+            const b="ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const c="1234567890";
+            const d="!@#$%^&*():;><,/.?'][{}+_-=";
+            const e=a+b+c+d;
+                let password="";
+                password+=a[Math.floor(Math.random()*a.length)];
+                password+=b[Math.floor(Math.random()*b.length)];
+                password+=c[Math.floor(Math.random()*c.length)];
+                password+=d[Math.floor(Math.random()*d.length)];
+                while(password.length<8){
+                    password+=e[Math.floor(Math.random()*e.length)];
+                }
+                document.getElementById("h").innerHTML=password;
+            }
+        </script>
+        <style>
+            body{
+                background-color: blueviolet;
+            }
+            div{
+                background-color: aliceblue;
+                height: 350px;
+                width: 600px;
+                border-radius: 50px;
+                padding: 40px;
+                margin-left: 350px;
+                margin-top: 150px;
+            }
+            h1{
+                margin-top: 20px;
+                margin-left: 40px;
+                font-size: 40px;
+                color: blueviolet;
+            }
+            #h{
+                color: rgb(13, 11, 14);
+            }
+            button{
+                margin-left: 40px;
+                margin-top: 40px;
+                width: 150px;
+                height: 40px;
+                background-color: blueviolet;
+                border-radius: 20px;
+                margin-left: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Random Password</h1>
+            <h1 class="gen">Generator</h1>
+            <h1 id="h"></h1>
+            <button id="btn" onclick="generate()">Generate</button>
+            </div>
+    </body>
+</html>
